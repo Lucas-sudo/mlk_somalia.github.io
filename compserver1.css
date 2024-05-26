@@ -1,0 +1,58 @@
+body {
+    background-color: #000;
+    color: #00FF00;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0; /* Removendo o padding padrão do corpo */
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.writeup-title {
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-align: center;
+    margin-top: 0; /* Adicionando margin-top para mover o título para o topo da página */
+}
+
+.content {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+nav li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav a {
+    color: #00FF00;
+    text-decoration: none;
+    font-size: 1.5em;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #00cc00;
+}
+/* Estilos específicos para o writeup de DNS */
+.dns-diagram {
+    max-width: 100%;
+    height: auto;
+    margin: 20px 0;
+}
+
+/* Mantenha os estilos gerais conforme fornecido anteriormente */

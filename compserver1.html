@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RansomFail</title>
+    <link rel="stylesheet" href="compserver1.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="writeup-title">Compromised Server 1</h1>
+        <div class="content">
+            <img src="Screenshot 2024-05-26 192953.png" alt="comp">
+            <p>Compromised Server 1 is a challenge powered by <a href="training.cybersecuritychallenge.pt">CNCS (Centro Nacional de Cibersegurança PORTUGAL)</a></p>
+            <p></p>
+            <p>To start, I downloaded the file that is given to us.</p>
+            <img src="compserver.png" alt="compserver">
+            <p></p>
+            <p>We were given a file with the .7z extension. Files with the .7z extension are compressed archives, similar to .zip or .rar files. To decompress a .7z file we can use the 7z program</p>
+            <img src="7zip.png" alt="sevenzip">
+            <p></p>
+            <p> A .tar file is an archive format commonly used in Unix and Linux operating systems. It stands for "tape archive," as it was originally designed for tape backups. A .tar file can contain multiple files and directories bundled together, but it does not compress them by default; it only packages them into a single file.</p>
+            <p>To extract the contents of a webroot.tar file we can do that:</p>
+            <pre>tar -xf webroot.tar</pre>
+            <img src="tar.png" alt="tar">
+            <p></p>
+            <p>Now a directory /usr has appeared. Let's take a look!</p>
+            <img src="tomcat.png" alt="tomcat">
+            <p>As we can see, the CTF description states that our objective is to understand how and what was executed on the system. This /usr is nothing more than a copy of the webroot directory used by the web server. It is an Apache Tomcat server.</p>
+            <p>
+                In the /logs directory, we can see some log files. I decided to search only for status code 200 in each of these files.
+                Just using <pre>grep 200 *</pre>
+                and I noticed several POST requests to /app/app.jsp with different response sizes.
+            </p>
+            <img src="posts.png" alt="posts">
+            <p>let's take a look at this app.jsp file, it's located at <strong>/webapps/app/</strong></p>
+            <p>there's a huge chunk of <strong>NOTHING</strong> in the file, let's remove these spaces by using <pre>cat app.jsp | tr -d "[:space:]"</pre></p>
+            <img src="hexadecimal.png" alt="hexa">
+            <p>we can see a lot of hexa values, so let's use <strong>CyberChef</strong> to convert the hexadecimal bytes to their original values and let's save the output</p>
+            <p>and just by reading the content of the file, we obtain the flag</p>
+            <img src="flag.png" alt="">
+            <p><strong>THE FLAG FORMAT IS CSCPT{}</strong></p>
+
+
+
+
+            
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">home</a></li>
+                <li><a href="../whoami.css">whoami</a></li>
+                <li><a href="../contact.html">contact</a></li>
+                <li><a href="../writeups.html">back to Writeups</a></li>
+            </ul>
+        </nav>
+    </div>
+</body>
+</html>
