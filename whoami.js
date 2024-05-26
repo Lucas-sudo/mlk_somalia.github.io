@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const speed = 150;
 
     function typeWriter() {
-        if (index < 6) {
+        if (index < text.length) {
             document.getElementById('typewriter').innerHTML += text.charAt(index);
             index++;
             setTimeout(typeWriter, speed);
