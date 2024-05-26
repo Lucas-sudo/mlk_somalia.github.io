@@ -33,7 +33,7 @@
                 and I noticed several POST requests to /app/app.jsp with different response sizes.
             </p>
             <img src="posts.png" alt="posts">
-            <p>let's take a look at this app.jsp file, it's located at <strong>/webapps/app/</strong></p>
+            <p>let's take a look at this app.jsp file. it's located at <strong>/webapps/app/</strong></p>
             <p>there's a huge chunk of <strong>NOTHING</strong> in the file, let's remove these spaces by using <pre>cat app.jsp | tr -d "[:space:]"</pre></p>
             <img src="hexadecimal.png" alt="hexa">
             <p>we can see a lot of hexa values, so let's use <strong>CyberChef</strong> to convert the hexadecimal bytes to their original values and let's save the output.</p>
