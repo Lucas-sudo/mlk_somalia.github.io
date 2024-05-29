@@ -61,3 +61,9 @@ nav a {
 nav a:hover {
     color: #00cc00;
 }
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
