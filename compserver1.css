@@ -3,7 +3,7 @@ body {
     color: #00FF00;
     font-family: 'Courier New', Courier, monospace;
     margin: 0;
-    padding: 0; /* Removendo o padding padrão do corpo */
+    padding: 0;
 }
 
 .container {
@@ -18,7 +18,7 @@ body {
     font-size: 3em;
     margin-bottom: 20px;
     text-align: center;
-    margin-top: 0; /* Adicionando margin-top para mover o título para o topo da página */
+    margin-top: 0; 
 }
 
 .content {
@@ -48,11 +48,16 @@ nav a {
 nav a:hover {
     color: #00cc00;
 }
-/* Estilos específicos para o writeup de DNS */
+
 .dns-diagram {
     max-width: 100%;
     height: auto;
     margin: 20px 0;
 }
 
-/* Mantenha os estilos gerais conforme fornecido anteriormente */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
