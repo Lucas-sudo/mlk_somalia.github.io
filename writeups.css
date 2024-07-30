@@ -1,12 +1,13 @@
+/* Estilos Gerais */
 body {
     background-color: #000;
     color: #00FF00;
     font-family: 'Courier New', Courier, monospace;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .container {
@@ -14,32 +15,35 @@ body {
 }
 
 h1 {
-    margin-bottom: 20px;
     font-size: 3em;
+    margin-bottom: 20px;
 }
 
-p#typewriter {
+.content {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+/* Efeito de digitação para "Under Maintenance..." */
+.typewriter {
     font-size: 2em;
-    border-right: 0.15em solid #00FF00;
     white-space: nowrap;
     overflow: hidden;
-    animation: typing 4s steps(20, end), blink-caret 0.75s step-end infinite;
+    border-right: 0.15em solid #00FF00;
+    width: 0;
+    display: inline-block;
+    animation: typing 3s steps(20, end) forwards, blink-caret 0.75s step-end infinite;
 }
 
 @keyframes typing {
     from { width: 0 }
-    to { width: 100% }
+    to { width: 20ch } /* Ajuste o valor de 'ch' conforme o comprimento do texto */
 }
 
 @keyframes blink-caret {
     from, to { border-color: transparent }
     50% { border-color: #00FF00 }
-}
-
-.content {
-    text-align: left;
-    max-width: 600px;
-    margin: 0 auto 20px;
 }
 
 nav ul {
@@ -48,7 +52,8 @@ nav ul {
 }
 
 nav li {
-    margin: 10px 0;
+    display: inline;
+    margin: 0 15px;
 }
 
 nav a {
@@ -61,4 +66,3 @@ nav a {
 nav a:hover {
     color: #00cc00;
 }
-
